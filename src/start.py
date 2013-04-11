@@ -1,11 +1,16 @@
-from bottle import route, run, template
+from bottle import route, run, template, static_file
+import os
+DIR = os.path.dirname(os.path.realpath(__file__))
+static_dir = os.path.realpath(DIR + '/../www/')
 
-
-@get
-def 
-
-@route('/hello/:name')
+@route('/')
 def index(name='World'):
-    return template('<b>Hello {{name}}</b>!', name=name)
+    return template('index')
 
-run(host='localhost', port=8080)
+@route('/<path:path>')
+def callback(path):
+    print path
+    print static_dir
+    return static_file(path, root=static_dir)
+
+run(host='localhost', port=8080,reloader=True)
