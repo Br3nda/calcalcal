@@ -4,11 +4,19 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import create_engine
 engine = create_engine('sqlite:///:memory:', echo=True)
 Base = declarative_base()
+
+from sqlalchemy.orm import sessionmaker
+Session = sessionmaker(bind=engine)
+
+
+
 def recreate_database():
-    pass
+    populate_data()
     
   
 class Group(Base):
+    __tablename__ = 'groups'
+    
     id = Column(Integer, primary_key=True)
     name = Column(String)
 
@@ -19,8 +27,6 @@ class Event(Base):
     name = Column(String)
     description = Column(String)
 
-    
-    
     
     
 def populate_data():
