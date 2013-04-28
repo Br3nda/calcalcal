@@ -2,23 +2,19 @@ from sqlalchemy import Table, MetaData, Column, ForeignKey, Integer, String
 from sqlalchemy.orm import mapper
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import create_engine
-engine = create_engine('sqlite:///:memory:', echo=True)
+engine = create_engine('pgsql://evencal@eventcal:', echo=True)
 Base = declarative_base()
 
 from sqlalchemy.orm import sessionmaker
-Session = sessionmaker(bind=engine)
+DB = sessionmaker(bind=engine)
+print DB
 
-
-
-def recreate_database():
-    populate_data()
-    
-  
 class Group(Base):
     __tablename__ = 'groups'
     
     id = Column(Integer, primary_key=True)
     name = Column(String)
+    ical_url = Column(String)
 
 class Event(Base):
     __tablename__ = 'events'
@@ -26,10 +22,10 @@ class Event(Base):
     id = Column(Integer, primary_key=True)
     name = Column(String)
     description = Column(String)
+    date_start = Column(Integer)
 
     
     
-def populate_data():
-    Event(name='DesignPro')
-    Event(name='Creative Skills')
-    Event(name='Design & Thinking')
+
+
+Base.metadata.create_all(engine) 

@@ -5,10 +5,28 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!-- Bootstrap -->
 <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+
 </head>
 <body>
-<h1>Hello, world!</h1>
+
+Event Calendar
+
+<div> Menu goes here</div>
+<div>Year graph thingie goes here</div>
+
+<div>
+  <div>Today</div>
+  <div>This Month</div>
+  <div>Next Month</div>
+</div>
+
 <script src="http://code.jquery.com/jquery.js"></script>
 <script src="js/bootstrap.min.js"></script>
+<script src="js/eventcal.js"></script>
+<script>
+  $(document).ready(function () {
+    get_events();
+  });
+</script>
 </body>
 </html>

@@ -3,15 +3,19 @@ import os
 DIR = os.path.dirname(os.path.realpath(__file__))
 static_dir = os.path.realpath(DIR + '/../www/')
 
+import calcalcal.web
 
-@get('/api/year')
+
+@get('/api/events.json')
 def callback():
-    from calcalcal.web import year_from_today
-    return year_from_today()
+    try:
+        return calcalcal.web.get_events()
+    except Exception, e:
+        return str(e)
 
 
 @route('/')
-def index(name='World'):
+def index():
     return static_file('index.html', root=static_dir)
 
 
