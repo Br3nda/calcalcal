@@ -1,4 +1,4 @@
-from sqlalchemy import Table, MetaData, Column, ForeignKey, Integer, String
+from sqlalchemy import Table, MetaData, Column, ForeignKey, Integer, String, Sequence
 from sqlalchemy.orm import mapper
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import create_engine
