@@ -1,32 +1,342 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-<title>Bootstrap 101 Template</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- Bootstrap -->
-<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Calendar</title>
+
+	<link rel="stylesheet" href="stylesheets/normalize.css" />
+	<link rel="stylesheet" href="stylesheets/stylesheet.css" />
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.0/jquery.min.js"></script>
+	<script src="js/scripts.js"></script>
+
+	<!--[if lt IE 9]>
+		<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
 
 </head>
 <body>
 
-Event Calendar
+	<header class="site-width">
+			<h1><a href="javascript:;">Event Calendar</a></h1>
+			<nav>
+				<ul>
+					<li><a href="javascript:;" id="calendar" class="active">Calendar</a></li>
+					<li><a href="javascript:;" id="customise" class="">Customise</a></li>
+					<li><a href="javascript:;" id="connect" class="">Connect</a></li>
+				</ul>
+				<input type="text" placeholder="Search" />
+				<a href="javascript:;" class="search-button">&nbsp;</a>
+			</nav>
+			<div id="graph" class="calendar-graph">
+				<div class="six-months">
+					<div class="month active">
+						<span class="axis"></span>
+						<span class="bar one"></span>
+						<span class="bar two"></span>
+						<span class="bar three"></span>
+						<span class="bar four"></span>
+						<span class="bar five"></span>
+						<span class="title-month">Jun</span>
+						<span class="title-year">2013</span>
+					</div>
+					<div class="month">
+						<span class="axis"></span>
+						<span class="bar one"></span>
+						<span class="bar two"></span>
+						<span class="bar three"></span>
+						<span class="bar four"></span>
+						<span class="bar five"></span>
+						<span class="title-month">Jul</span>
+					</div>
+					<div class="month">
+						<span class="axis"></span>
+						<span class="bar one"></span>
+						<span class="bar two"></span>
+						<span class="bar three"></span>
+						<span class="bar four"></span>
+						<span class="bar five"></span>
+						<span class="title-month">Aug</span>
+					</div>
+					<div class="month">
+						<span class="axis"></span>
+						<span class="bar one"></span>
+						<span class="bar two"></span>
+						<span class="bar three"></span>
+						<span class="bar four"></span>
+						<span class="bar five"></span>
+						<span class="title-month">Sep</span>
+					</div>
+					<div class="month">
+						<span class="axis"></span>
+						<span class="bar one"></span>
+						<span class="bar two"></span>
+						<span class="bar three"></span>
+						<span class="bar four"></span>
+						<span class="bar five"></span>
+						<span class="title-month">Oct</span>
+					</div>
+					<div class="month">
+						<span class="axis"></span>
+						<span class="bar one"></span>
+						<span class="bar two"></span>
+						<span class="bar three"></span>
+						<span class="bar four"></span>
+						<span class="bar five"></span>
+						<span class="title-month">Nov</span>
+					</div>
+					<div class="month">
+						<span class="axis"></span>
+						<span class="bar one"></span>
+						<span class="bar two"></span>
+						<span class="bar three"></span>
+						<span class="bar four"></span>
+						<span class="bar five"></span>
+						<span class="title-month">More</span>
+					</div>
+				</div>
+			</div>
+	</header>
 
-<div> Menu goes here</div>
-<div>Year graph thingie goes here</div>
+	<section class="site-width">
+		<div id="section-calendar">
+			<!-- If we need a hero image, choose one that is 1024px wide
+			<img src="img/hero-image.jpg" class="hero" /> -->
+			<h2>Today</h2>
+			<div class="line-item">
+				<span class="day">Tu</span>
+				<span class="date">4</span>
+				<span class="time">6:30pm</span>
+				<span class="group"><a href="#">Creative Skills</a></span>
+				<span class="event">The Smell of Ink in the Morning</span>
+				<span class="location">The Kitchen</span>
+			</div>
+			<h2>This Month</h2>
+			<div class="line-item">
+				<span class="day">Tu</span>
+				<span class="date">4</span>
+				<span class="time">6:30pm</span>
+				<span class="group"><a href="#">Creative Skills</a></span>
+				<span class="event">The Smell of Ink in the Morning</span>
+				<span class="location">The Kitchen</span>
+			</div>
+			<div class="line-item">
+				<span class="day">Th</span>
+				<span class="date">8</span>
+				<span class="time">6pm</span>
+				<span class="group"><a href="#">DesignPro</a></span>
+				<span class="event">The Smell of Ink in the Morning and waffles in the evening</span>
+				<span class="location">A long location to show how things cut off</span>
+			</div>
+			<div class="line-item">
+				<span class="day">Fr</span>
+				<span class="date">9</span>
+				<span class="time">7pm</span>
+				<span class="group"><a href="#">Photography Meetup</a></span>
+				<span class="event">The Smell of Ink in the Morning</span>
+				<span class="location">The Kitchen</span>
+			</div>
+			<h2>July</h2>
+			<div class="line-item multi first">
+				<span class="day">Mo</span>
+				<span class="date">1</span>
+				<span class="time">6:30pm</span>
+				<span class="group"><a href="#">Creative Skills</a></span>
+				<span class="event">The Smell of Ink in the Morning</span>
+				<span class="location">The Kitchen</span>
+			</div>
+			<div class="line-item multi">
+				<span class="day">Mo</span>
+				<span class="date">1</span>
+				<span class="time">8pm</span>
+				<span class="group"><a href="#">.Net Usergroup</a></span>
+				<span class="event">The Smell of programmers in the Morning</span>
+				<span class="location">The Bedroom</span>
+			</div>
+			<div class="line-item multi last">
+				<span class="day">Mo</span>
+				<span class="date">1</span>
+				<span class="time">9pm</span>
+				<span class="group"><a href="#">Functional Programming Usergroup</a></span>
+				<span class="event">More programming mayhem.</span>
+				<span class="location">The Bathroom</span>
+			</div>
+			<div class="line-item">
+				<span class="day">We</span>
+				<span class="date">3</span>
+				<span class="time">7:30pm</span>
+				<span class="group"><a href="#">Creative Skills</a></span>
+				<span class="event">The Smell of Ink in the Morning</span>
+				<span class="location">The Kitchen</span>
+			</div>
+		</div>
 
-<div>
-  <div>Today</div>
-  <div>This Month</div>
-  <div>Next Month</div>
-</div>
+		<div id="section-customise" class="hidden">
+			<h1>Customise <span>which sources to show</span></h1>
+			<a href="javascript:;" class="done top">Done</a>
+			<h2>Design <span>(All 9 selected)</span></h2>
+			<div class="option all design">
+				<span class="checkbox"><input type="checkbox" id="one" /></span>
+				<span class="source"><label for="one">All design sources</label></span>
+			</div>
+			<div class="option design">
+				<span class="checkbox"><input type="checkbox" id="two" /></span>
+				<span class="source"><label for="two">Creative Skills</label></span>
+			</div>
+			<div class="option design">
+				<span class="checkbox"><input type="checkbox" id="three" /></span>
+				<span class="source"><label for="three">DesignPro</label></span>
+			</div>
+			<div class="option design">
+				<span class="checkbox"><input type="checkbox" id="four" /></span>
+				<span class="source"><label for="four">UX Meetup</label></span>
+			</div>
+			<div class="option design">
+				<span class="checkbox"><input type="checkbox" id="five" /></span>
+				<span class="source"><label for="five">Creative Suite Meetup</label></span>
+			</div>
+			<div class="option design">
+				<span class="checkbox"><input type="checkbox" id="six" /></span>
+				<span class="source"><label for="six">Design &amp; Thinking</label></span>
+			</div>
+			<div class="option design">
+				<span class="checkbox"><input type="checkbox" id="seven" /></span>
+				<span class="source"><label for="seven">Maker Meetup</label></span>
+			</div>
+			<div class="option design">
+				<span class="checkbox"><input type="checkbox" id="eight" /></span>
+				<span class="source"><label for="eight">Design Cinema</label></span>
+			</div>
+			<div class="option design">
+				<span class="checkbox"><input type="checkbox" id="nine" /></span>
+				<span class="source"><label for="nine">Photography Meetup</label></span>
+			</div>
+			<div class="option design">
+				<span class="checkbox"><input type="checkbox" id="ten" /></span>
+				<span class="source"><label for="ten">Webstock</label></span>
+			</div>
+			<h2>Technology <span>(All 23 selected)</span></h2>
+			<div class="option all technology">
+				<span class="checkbox"><input type="checkbox" id="eleven" /></span>
+				<span class="source"><label for="eleven">All technology sources</label></span>
+			</div>
+			<div class="option technology">
+				<span class="checkbox"><input type="checkbox" id="twelve" /></span>
+				<span class="source"><label for="twelve">Agile Wellington</label></span>
+			</div>
+			<div class="option technology">
+				<span class="checkbox"><input type="checkbox" id="thirteen" /></span>
+				<span class="source"><label for="thirteen">Macintosh Society</label></span>
+			</div>
+			<div class="option technology">
+				<span class="checkbox"><input type="checkbox" id="fourteen" /></span>
+				<span class="source"><label for="fourteen">SharePoint Usergroup</label></span>
+			</div>
+			<div class="option technology">
+				<span class="checkbox"><input type="checkbox" id="fifteen" /></span>
+				<span class="source"><label for="fifteen">.Net Usergroup</label></span>
+			</div>
+			<div class="option technology">
+				<span class="checkbox"><input type="checkbox" id="sixteen" /></span>
+				<span class="source"><label for="sixteen">Makers Meetup</label></span>
+			</div>
+			<div class="option technology">
+				<span class="checkbox"><input type="checkbox" id="seventeen" /></span>
+				<span class="source"><label for="seventeen">SQL Usergroup</label></span>
+			</div>
+			<div class="option technology">
+				<span class="checkbox"><input type="checkbox" id="eighteen" /></span>
+				<span class="source"><label for="eighteen">Adobe Web Tech Meetup</label></span>
+			</div>
+			<div class="option technology">
+				<span class="checkbox"><input type="checkbox" id="nineteen" /></span>
+				<span class="source"><label for="nineteen">Mobile Dev Meetup</label></span>
+			</div>
+			<div class="option technology">
+				<span class="checkbox"><input type="checkbox" id="twenty" /></span>
+				<span class="source"><label for="twenty">Summer of Tech</label></span>
+			</div>
+			<div class="option technology">
+				<span class="checkbox"><input type="checkbox" id="twentyone" /></span>
+				<span class="source"><label for="twentyone">Functional Programming Usergroup</label></span>
+			</div>
+			<div class="option technology">
+				<span class="checkbox"><input type="checkbox" id="twentytwo" /></span>
+				<span class="source"><label for="twentytwo">Nerd Nite</label></span>
+			</div>
+			<div class="option technology">
+				<span class="checkbox"><input type="checkbox" id="twentythree" /></span>
+				<span class="source"><label for="twentythree">TeamSystem (VSTS)</label></span>
+			</div>
+			<div class="option technology">
+				<span class="checkbox"><input type="checkbox" id="twentyfour" /></span>
+				<span class="source"><label for="twentyfour">Hackers &amp; Founders</label></span>
+			</div>
+			<div class="option technology">
+				<span class="checkbox"><input type="checkbox" id="twentyfive" /></span>
+				<span class="source"><label for="twentyfive">NoSQL Usergroup</label></span>
+			</div>
+			<div class="option technology">
+				<span class="checkbox"><input type="checkbox" id="twentysix" /></span>
+				<span class="source"><label for="twentysix">Unlimited Potential (UP)</label></span>
+			</div>
+			<div class="option technology">
+				<span class="checkbox"><input type="checkbox" id="twentyseven" /></span>
+				<span class="source"><label for="twentyseven">Institute of IT Professionals</label></span>
+			</div>
+			<div class="option technology">
+				<span class="checkbox"><input type="checkbox" id="twentyeight" /></span>
+				<span class="source"><label for="twentyeight">NZ ICT</label></span>
+			</div>
+			<div class="option technology">
+				<span class="checkbox"><input type="checkbox" id="twentynine" /></span>
+				<span class="source"><label for="twentynine">Well Railed</label></span>
+			</div>
+			<div class="option technology">
+				<span class="checkbox"><input type="checkbox" id="thirty" /></span>
+				<span class="source"><label for="thirty">Java Usergroup</label></span>
+			</div>
+			<div class="option technology">
+				<span class="checkbox"><input type="checkbox" id="thirtyone" /></span>
+				<span class="source"><label for="thirtyone">Perl Mongers</label></span>
+			</div>
+			<div class="option technology">
+				<span class="checkbox"><input type="checkbox" id="thirtytwo" /></span>
+				<span class="source"><label for="thirtytwo">Webstock</label></span>
+			</div>
+			<div class="option technology">
+				<span class="checkbox"><input type="checkbox" id="thirtythree" /></span>
+				<span class="source"><label for="thirtythree">JS Meetup</label></span>
+			</div>
+			<div class="option technology">
+				<span class="checkbox"><input type="checkbox" id="thirtyfour" /></span>
+				<span class="source"><label for="thirtyfour">Python Usergroup</label></span>
+			</div>
+			<a href="javascript:;" class="done">Done</a>
+		</div>
 
-<script src="http://code.jquery.com/jquery.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/eventcal.js"></script>
-<script>
-  $(document).ready(function () {
-    get_events();
-  });
-</script>
+		<div id="section-connect" class="hidden">
+			<h1>Connect <span>this calendar to your own</span></h1>
+			<div class="option">
+				<span class="checkbox"><input type="checkbox" id="export-google" /></span>
+				<span class="source"><label for="export-google">Google</label></span>
+			</div>
+			<div class="option">
+				<span class="checkbox"><input type="checkbox" id="export-outlook" /></span>
+				<span class="source"><label for="export-outlook">Outlook</label></span>
+			</div>
+			<div class="option">
+				<span class="checkbox"><input type="checkbox" id="export-ical" /></span>
+				<span class="source"><label for="export-ical">iCal</label></span>
+			</div>
+		</div>
+	</section>
+
+	<footer class="site-width">
+
+	</footer>
+
 </body>
 </html>
