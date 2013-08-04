@@ -2,7 +2,7 @@ from sqlalchemy import Table, MetaData, Column, ForeignKey, Integer, String, Seq
 from sqlalchemy.orm import mapper
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import create_engine
-engine = create_engine('postgresql+psycopg2://evencal@localhost:5432/eventcal:', echo=True)
+engine = create_engine('postgresql://eventcal@localhost:5432/eventcal', echo=True)
 Base = declarative_base()
 
 from sqlalchemy.orm import sessionmaker
