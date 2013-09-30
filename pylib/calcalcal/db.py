@@ -22,7 +22,10 @@ class Event(Base):
     
     id = Column(Integer, primary_key=True)
     name = Column(String)
+    group = Column(String)
+    location = Column(String)
     description = Column(String)
+    
     date_start = Column(Integer)
     date_end = Column(Integer)
     
@@ -36,6 +39,6 @@ import datetime
 
 today = datetime.date.today()
 one_day = datetime.timedelta(days=1)
-DBSession.add(Event(name='DesignPro', date_start=today.toordinal(), date_end = (today + one_day).toordinal()))
-DBSession.add(Event(name='Creative Skills', date_start=datetime.date(2013, 9, 30).toordinal()))
-DBSession.add(Event(name='Design & Thinking', date_start=datetime.date(2013,10, 13).toordinal() ))
+DBSession.add(Event(name='DesignPro', group='HEYHEYHEY', location="The kitchen", date_start=today.toordinal(), date_end = (today + one_day).toordinal()))
+DBSession.add(Event(name='Creative Skills', group='Groupppies', location="carpark", date_start=datetime.date(2013, 9, 30).toordinal()))
+DBSession.add(Event(name='Design & Thinking', group='Group One', location="100 main st", date_start=datetime.date(2013,10, 13).toordinal() ))
