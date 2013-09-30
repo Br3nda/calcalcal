@@ -16,8 +16,12 @@ def year_from_today():
         '02': 0}
 
 def get_events():
-    today = time.gmtime()
-    events_today = calcalcal.get_events(today, today)
+    today = time.time()
+    
+    events_today = [] 
+    for e in calcalcal.get_events(today, today):
+      events_today.append({'id': e.id, 'name': e.name})
+
     return {'Today': events_today,
         'This Month': [],
         'April': []
