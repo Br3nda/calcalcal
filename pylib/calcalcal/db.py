@@ -37,5 +37,5 @@ import datetime
 today = datetime.date.today()
 one_day = datetime.timedelta(days=1)
 DBSession.add(Event(name='DesignPro', date_start=today.toordinal(), date_end = (today + one_day).toordinal()))
-DBSession.add(Event(name='Creative Skills', date_start=today.toordinal()))
-DBSession.add(Event(name='Design & Thinking', date_start=today.toordinal()) )
+DBSession.add(Event(name='Creative Skills', date_start=datetime.date(2013, 9, 30).toordinal()))
+DBSession.add(Event(name='Design & Thinking', date_start=datetime.date(2013,10, 13).toordinal() ))
