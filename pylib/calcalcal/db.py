@@ -8,7 +8,7 @@ Base = declarative_base()
 from sqlalchemy.orm import sessionmaker
 DB = sessionmaker(bind=engine)
 print DB
-DBSEssion = DB()
+DBSession = DB()
 
 class Group(Base):
     __tablename__ = 'groups'
@@ -32,6 +32,10 @@ Base.metadata.drop_all(engine)
 Base.metadata.create_all(engine) 
 
 
-Event(name='DesignPro')
-Event(name='Creative Skills')
-Event(name='Design & Thinking') 
+import datetime
+
+today = datetime.date.today()
+one_day = datetime.timedelta(days=1)
+DBSession.add(Event(name='DesignPro', date_start=today.toordinal(), date_end = (today + one_day).toordinal()))
+DBSession.add(Event(name='Creative Skills', date_start=today.toordinal()))
+DBSession.add(Event(name='Design & Thinking', date_start=today.toordinal()) )

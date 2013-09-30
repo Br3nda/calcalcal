@@ -1,9 +1,10 @@
-from calcalcal.db import Event, DBSEssion
+from calcalcal.db import Event, DBSession
 
 def get_events(start, end):
-    return DBSEssion.query(Event)\
-		    .filter(Event.date_start >= start)\
-		    .filter(Event.date_end <= end)
+  
+    return DBSession.query(Event)\
+		    .filter(Event.date_start >= start.toordinal()) \
+		    .filter(Event.date_end <= end.toordinal())
       
    
 
