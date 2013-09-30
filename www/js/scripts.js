@@ -62,15 +62,3 @@ $(function() {
 });
 
 
-function page_setup() {
-    get_next_events();
-}
-
-function get_next_events() {
-    $.ajax({
-        url: "/api/events.json",
-        context: document.body
-    }).done(function() {
-        alert('done');
-    });
-}
