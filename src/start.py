@@ -8,10 +8,7 @@ import calcalcal.web
 
 @get('/api/events.json')
 def callback():
-    try:
-        return calcalcal.web.get_events()
-    except Exception, e:
-        return str(e)
+    return calcalcal.web.get_events()
 
 
 @route('/')
