@@ -1,4 +1,4 @@
-import time
+import datetime
 import calcalcal
 def year_from_today():
     return {
@@ -16,13 +16,24 @@ def year_from_today():
         '02': 0}
 
 def get_events():
-    today = time.time()
+    today = datetime.date.today()
+    one_day = datetime.timedelta(days=1)
     
     events_today = [] 
-    for e in calcalcal.get_events(today, today):
+    for e in calcalcal.get_events(today, (today + one_day) ):
       events_today.append({'id': e.id, 'name': e.name})
+      
+      
+    import calendar
+    last_day_of_month = calendar.monthrange(today.year ,today.month)[1]
+    first_of_month = today.replace(day=1)
+    end_of_month = today.replace(day=last_day_of_month)    
+    events_this_month = []
+    for e in calcalcal.get_events(first_of_month, end_of_month):
+      events_this_month.append({'id': e.id, 'name': e.name})
 
-    return {'Today': events_today,
-        'This Month': [],
-        'April': []
+    return {
+	'today': events_today,
+        'this_month': events_this_month,
+        'next_month': []
         }
