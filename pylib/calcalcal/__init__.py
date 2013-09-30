@@ -1,12 +1,9 @@
-from calcalcal.db import Event, DB
+from calcalcal.db import Event, DBSEssion
 
 def get_events(start, end):
-    return DB.query(Event)\
-        .filter_by(Event.date_start >= start)\
-        .filter_by(Event.date_end <= end)
+    return DBSEssion.query(Event)\
+		    .filter(Event.date_start >= start)\
+		    .filter(Event.date_end <= end)
+      
    
 
-def populate_data():
-    Event(name='DesignPro')
-    Event(name='Creative Skills')
-    Event(name='Design & Thinking') 
